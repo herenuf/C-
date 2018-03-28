@@ -21,5 +21,26 @@ namespace WindowsFormsApp2
         {
 
         }
+        int deltX = 10;
+        int deltY = 8;
+        private void timerl_Tick(object sender, EventArgs e)
+        {
+            this.label1.Left += deltX;
+            this.label1.Top += deltY;
+            if (this.label1.Top < 0 ||
+                this.label1.Top + this.label1.Height > this.Height)
+                deltY = -deltY;
+            if (this.label1.Left < 0 ||
+                this.label1.Left + this.label1.Width > this.Width)
+                deltX = -deltX;
+        }
+        private void Form1_KeyDown(object sender, System.Windows.Forms.Form)
+        {
+            Application.Exit();
+        }
+        private void Form1_MouseMove(object sender, System.Windows.Forms.Form)
+        {
+            //Application.Exit();
+        }
     }
 }
