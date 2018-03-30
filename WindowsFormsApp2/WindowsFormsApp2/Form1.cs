@@ -12,35 +12,40 @@ namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
         int deltX = 10;
+
         int deltY = 8;
-        private void timerl_Tick(object sender, EventArgs e)
+
+        private void label1_Click(object sender, System.EventArgs e)
+
         {
+
             this.label1.Left += deltX;
+
             this.label1.Top += deltY;
+
             if (this.label1.Top < 0 ||
+
                 this.label1.Top + this.label1.Height > this.Height)
+
                 deltY = -deltY;
+
             if (this.label1.Left < 0 ||
+
                 this.label1.Left + this.label1.Width > this.Width)
+
                 deltX = -deltX;
+
         }
-        private void Form1_KeyDown(object sender, System.Windows.Forms.Form)
+
+
+
+        private void Form1_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+
         {
+
             Application.Exit();
-        }
-        private void Form1_MouseMove(object sender, System.Windows.Forms.Form)
-        {
-            //Application.Exit();
+
         }
     }
 }
